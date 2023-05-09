@@ -19,9 +19,15 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    @book = Book.find(params[:id])#この文を追加した際に上のendの後にスペースがあってエラーが出た
   end
   
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
+  end
+    
   private
   #ストロングパラメータ
   def book_params
