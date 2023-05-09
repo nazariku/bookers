@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'books/new'
-  get 'books/index'
-  get 'books/show'
+  get 'books' => 'books#index'
+  get 'books/:id' => 'books#show',as: 'book'#as:オプション「'books#show'の設定を、bookとして利用できる」
   get 'books/edit'
   get '/top' => 'homes#top'
   post 'books' => 'books#create'
