@@ -1,19 +1,20 @@
 class BooksController < ApplicationController
   def new
   end
-  
+
   def create
     @book = Book.new(book_params)
     if @book.save
-     redirect_to book_path(@book.id)
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book.id)
     else
-     render :index
+      render :index
     end
   end
 
   def index
     @book = Book.new
-    
+
   end
 
   def show
@@ -24,19 +25,20 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])#この文を追加した際に上のendの後にスペースがあってエラーが出た
   end
-  
+
   def update
     book = Book.find(params[:id])
     book.update(book_params)
+    flash[:notice] = "Book was successfully updated."
     redirect_to book_path(book.id)
   end
-  
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
   end
-    
+
   private
   #ストロングパラメータ
   def book_params
