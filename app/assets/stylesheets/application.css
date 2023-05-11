@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+.text_success{
+  color: green;
+}
+
 body{
   background-color: #fff;
   color: #333;
@@ -69,11 +73,14 @@ strong{
   font-weight: bold;
 }
 
+a{
+  color: #000;
+}
 a:visited{
-  color: #666;
+  color: #;
 }
 
-a:-webkit-any-link{
+a{
   cursor: pointer;
   text-decoration: underline;
 }
@@ -108,11 +115,19 @@ th{
   vertical-align: inherit;
   font-weight: bold;
   text-align: -internal-center;
+  padding-bottom: 5px;
+}
+
+label{
+  display: block
 }
 
 td{
   display: table-cell;
   vertical-align: inherit;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 form{
@@ -123,5 +138,24 @@ form{
 div{
   display: block;
 }
-input
+
+.field{
+  margin-bottom: 10px;
 }
+
+.actions{
+  margin-bottom: 10px;
+}
+
+input{
+  padding: 1px 6px;
+}
+
+#book_title{
+  padding: 1px 2px;
+}
+
+#book_body{
+  padding: 2px;
+}
+
