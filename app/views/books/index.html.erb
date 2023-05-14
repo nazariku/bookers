@@ -1,5 +1,8 @@
 <html>
   <body>
+    <div class="text_success">
+      <p><%= flash[:notice] %></p>
+    </div>
     <h1>Books</h1>
     <table>
       <thead>
@@ -22,17 +25,19 @@
     </table>
     <h2>New book</h2>
   
-      <% if @book.errors.any? %>
-        <%= @book.errors.count %> create error
+    <div id="error_explanation">
+        <% if @book.errors.any? %>
+          <h2><%= @book.errors.count %> error prohibited this book from being saved:</h2>
         <ul>
           <% @book.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>
       <% end %>
+    </div>
       
       <%= form_with model: @book, url: '/books', method: :post do |f| %>
-        <form>
+        
           
           <div class="field">
             <label for="book_title">Title</label>
@@ -45,7 +50,7 @@
           </div>
           
           <div class="actions"><%= f.submit 'Create Book' %></div>
-        </form>
+      
       <% end %>
   </body>
 </html>
