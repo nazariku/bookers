@@ -74,6 +74,13 @@ p{
   margin-inline-end: 0px;
 }
 
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
 p, ol, ul, td{
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -174,18 +181,6 @@ input{
 
 #error_explanation{
   width: 450px;
- 
- 
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-ul{
-  display: block;
-  list-style-type: disc;
- 
-  
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
 }
